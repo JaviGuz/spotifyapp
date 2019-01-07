@@ -17,7 +17,7 @@ export class SpotifyService {
 
 
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQAywiH4pBGxxHUt4rCWMcI9ZYRMfgD6TKdd3OUyg3y5Vu4oD6Sf5dV8ES4EFhXsNoH00J39uJ_Kz0FvIWg'
+      'Authorization': 'Bearer BQBao7-MUVs-xZwkXos7PQ3H6x-2RuCPi4TR9RpuObRuIVSAjkU7LcbW6jn5xE-1ns0dZOr9GSbOzoCFk94'
     });
 
     return this.http.get(url, {headers});
@@ -28,7 +28,7 @@ export class SpotifyService {
                .pipe(map(data => data['albums'].items));
   }
 
-  getArtista(termino: string ) {
+  getArtistas(termino: string ) {
 
     /*return this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist&limit=20`, { headers })
           .pipe(map(data => { // El operador map sirve para filtrar la información que recoges al realizar un get.
@@ -37,6 +37,13 @@ export class SpotifyService {
 
     return this.getQuery(`search?q=${termino}&type=artist&limit=20`)
                .pipe(map(data =>  data['artists'].items)); // Cuando una función de flecha solo tiene una linea se puede poner todo en una linea y eliminar el termino return
+
+  }
+
+  getArtista(id: string) {
+
+    return this.getQuery(`artists/${ id }`);
+      // .pipe(map(data => data['artists'].items));
 
   }
 

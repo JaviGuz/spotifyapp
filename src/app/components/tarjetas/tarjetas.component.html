@@ -1,7 +1,7 @@
 <div class="card-columns m-5 animated fadeIn">
 
 
-  <div *ngFor="let item of items" class="card">
+  <div (click)="verArtista( item )"*ngFor="let item of items" class="card puntero">
     <img class="card-img-top" [src]="item.images | noimage" alt="...">
     <!--src entre corchetes para decir que es una propiedad que va a manejar angular-->
     <div class="card-body">
