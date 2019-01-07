@@ -3,7 +3,7 @@
 
 
     <div *ngFor="let cancion of nuevasCanciones" class="card">
-        <img class="card-img-top" [src]="cancion.images[0].url"  alt="..."> <!--src entre corchetes para decir que es una propiedad que va a manejar angular-->
+        <img class="card-img-top" [src]="cancion.images | noimage"  alt="..."> <!--src entre corchetes para decir que es una propiedad que va a manejar angular-->
         <div class="card-body">
             <h5 class="card-title">{{cancion.name}}</h5>
             <p class="card-text">
