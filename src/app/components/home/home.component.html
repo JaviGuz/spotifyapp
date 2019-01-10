@@ -1,1 +1,6 @@
+<div *ngIf="error" class="alert alert-danger animated fadeIn">
+
+    <p style='text-align:center'>{{mensajeError}}</p>
+</div>
+
 <app-tarjetas [items]="nuevasCanciones"></app-tarjetas>
